@@ -37,6 +37,7 @@ namespace Basket.API
                 (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
 
             services.AddScoped<DiscountGrpcService>();
+            services.AddAutoMapper(typeof(Startup));
 
             //MassTransit-RabbitMq Configuration
             services.AddMassTransit(config =>
